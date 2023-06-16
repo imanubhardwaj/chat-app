@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+* {
+  outline: none;
+  scroll-behavior: smooth;
+}
+
+.spinner::after {
+  content: '';
+  width: 80%;
+  height: 80%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 40%,
+    rgba(255, 255, 255, 0.7) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-5%, -5%);
+}
+
+.custom-input {
+  @apply w-full !important;
+}
+
+.custom-input .MuiOutlinedInput-input {
+  @apply px-3 py-2.5 !important;
+}
+
+.custom-input:focus-within fieldset {
+  @apply border-green-800  !important;
+}
+
+.custom-input .MuiOutlinedInput-root {
+  @apply font-normal text-sm !important;
+}
+
+.custom-input fieldset {
+  @apply border-0 border-b border-green-600 rounded-none !important;
+}
+
+.custom-input.has-error fieldset {
+  @apply text-red-500 border-red-500 !important;
+}
+
+.custom-input.no-border fieldset {
+  @apply border-0 !important;
+}
